@@ -9,13 +9,14 @@
 }
 
 nav{
-     background-color: #371B58;
-     color: white;
+     background-color: #FAD4D4;
+     color: #F47C7C;
      height: 60px;
      font-size: 25px;
      display: flex;
      align-items: center;
-     padding: 0 20px;
+     padding: 0 40px;
+     /* justify-content: center; */
      font-family: 'Nunito', sans-serif;
 }
 
@@ -34,7 +35,7 @@ nav{
 }
 
 .box{
-    border: 1px solid #371B58;
+    border: 1px solid #F47C7C;
     font-size: 8vw;
     display: flex;
     justify-content: center;
@@ -42,7 +43,7 @@ nav{
 }
 .box:hover{
 
-    background-color: #e2d6ef;
+    background-color: #FFF2F2;
 }
 
 .gameInfo{
@@ -74,9 +75,18 @@ nav{
 
 #reset{
     margin-left: 20px;
-    padding: 5px 20px;
-}
+    padding: 10px 30px;
+    background-color: #FAD4D4;
+    color: #F47C7C;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 5px;
 
+}
+.box2{
+    margin-top: 20px;
+}
 
 @media screen and (max-width: 950px)
 {
