@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>tic-tac-toe</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="four.css">
 </head>
 <body>
     <nav class="nav">
@@ -15,15 +15,23 @@
     <div class="gameContainer">
 
         <div class="container">
-            <div class="box bl-0 bt-0"><span class="box-text"></span></div>
+            <div class="box bt-0 bl-0"><span class="box-text"></span></div>
+            <div class="box bt-0"><span class="box-text"></span></div>
             <div class="box bt-0"><span class="box-text"></span></div>
             <div class="box bt-0 br-0"><span class="box-text"></span></div>
             <div class="box bl-0"><span class="box-text"></span></div>
             <div class="box"><span class="box-text"></span></div>
+            <div class="box"><span class="box-text"></span></div>
+            <div class="box br-0"><span class="box-text"></span></div>
+            <div class="box bl-0"><span class="box-text"></span></div>
+            <div class="box"><span class="box-text"></span></div>
+            <div class="box"><span class="box-text"></span></div>
             <div class="box br-0"><span class="box-text"></span></div>
             <div class="box bl-0 bb-0"><span class="box-text"></span></div>
             <div class="box bb-0"><span class="box-text"></span></div>
-            <div class="box br-0 bb-0"><span class="box-text"></span></div>
+            <div class="box bb-0"><span class="box-text"></span></div>
+            <div class="box bb-0 br-0"><span class="box-text"></span></div>
+
         </div>
 
 
@@ -34,7 +42,7 @@
             <div class="box2">
                 <span class="info">Turn for X</span>
                 <button id="reset" class="btn">Reset</button>
-                <button id="four" onclick="four()" class="btn">4 x 4</button>
+                <button id="three" onclick="three()" class="btn">3 x 3</button>
                 <button id="five" onclick="five()" class="btn">5 x 5</button>
             </div>
 
@@ -47,5 +55,5 @@
 
     </div>
 </body>
-<script src="index.js"></script>
+<script src="four.js"></script>
 </html>

@@ -1,6 +1,4 @@
 
-
-
 let audioTurn =  new Audio("beep-sound-8333.mp3");
 let turn = "X";
 let gameover = false;
@@ -18,23 +16,27 @@ const checkWin = () => {
     let boxtext = document.getElementsByClassName("box-text");
 
     let win = [
-        [0,1,2],
-        [3,4,5],
-        [6,7,8],
-        [0,3,6],
-        [1,4,7],
-        [2,5,8],
-        [0,4,8],
-        [2,4,6]    
+        [0,1,2,3,4],
+        [5,6,7,8,9],
+        [10,11,12,13,14],
+        [15,16,17,18,19],
+        [20,21,22,23,24],
+        [0,5,10,15,20],
+        [1,6,11,16,21],
+        [2,7,12,17,22] ,
+        [3,8,13,18,23],
+        [4,9,14,19,24],
+        [0,6,12,18,24],
+        [4,8,12,16,20],
     ]
  
     win.forEach(e =>{
-        if ((boxtext[e[0]].innerText === boxtext[e[1]].innerText) && (boxtext[e[2]].innerText === boxtext[e[1]].innerText) && (boxtext[e[0]].innerText !== "")){
-            console.log(1)
+        if ((boxtext[e[0]].innerText === boxtext[e[1]].innerText) && (boxtext[e[1]].innerText === boxtext[e[2]].innerText)&&(boxtext[e[2]].innerText === boxtext[e[3]].innerText) &&(boxtext[e[3]].innerText === boxtext[e[4]].innerText) && (boxtext[e[0]].innerText !== "")){
+          
             document.querySelector('.info').innerText = boxtext[e[0]].innerText + " Won";
             gameover = true;
             document.querySelector(".img-box").getElementsByTagName("img")[0].style.width = "250px";
-            console.log(2)
+           
         };
     })
    
@@ -61,7 +63,7 @@ let boxes = document.getElementsByClassName("box");
                
             };
             // console.log(count)
-            if(count===9){
+            if(count===25){
                 draw()
 
             }
@@ -74,7 +76,7 @@ let boxes = document.getElementsByClassName("box");
         Array.from(boxtexts).forEach(element=>{
            element.innerText = "";
         });
-        count=0
+        count=0;
         turn = "X";
         gameover = false;
         document.getElementsByClassName("info")[0].innerText = "Turn for " + turn;
@@ -84,7 +86,7 @@ let boxes = document.getElementsByClassName("box");
 
     function draw(){
         alert("match draw")
-        window.location.href="index.html"
+        window.location.href="five.html"
     }
 
 
@@ -92,19 +94,15 @@ let boxes = document.getElementsByClassName("box");
 
 function win(t){
     alert(`${t} won`)
-    window.location.href="index.html"
+    window.location.href="five.html"
 
 }
 
+
+function three(){
+    window.location.href="index.html"
+}
 
 function four(){
     window.location.href="four.html"
 }
-
-function five(){
-    window.location.href="five.html"
-}
-
-
-
-    
