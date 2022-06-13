@@ -1,17 +1,16 @@
 
 
-console.log("Welcome to my game")
-
 
 let audioTurn =  new Audio("beep-sound-8333.mp3");
 let turn = "X";
 let gameover = false;
-
+let count = 0;
 
 // to change turn
 const changeTurn = () =>{
     return turn === "X" ? "O" : "X";
 }
+
 
 
 const checkWin = () => {
@@ -31,39 +30,45 @@ const checkWin = () => {
  
     win.forEach(e =>{
         if ((boxtext[e[0]].innerText === boxtext[e[1]].innerText) && (boxtext[e[2]].innerText === boxtext[e[1]].innerText) && (boxtext[e[0]].innerText !== "")){
+            console.log(1)
             document.querySelector('.info').innerText = boxtext[e[0]].innerText + " Won";
             gameover = true;
-            document.querySelector(".img-box").getElementsByTagName("img")[0].style.width = "250px"
+            document.querySelector(".img-box").getElementsByTagName("img")[0].style.width = "250px";
+            console.log(2)
         };
     })
+   
 }
 
 
-
 let boxes = document.getElementsByClassName("box");
+
     Array.from(boxes).forEach( element =>{
         let boxtext = element.querySelector(".box-text");
         element.addEventListener("click" , () => {
             if(boxtext.innerText === ""){
                 boxtext.innerText = turn;
-                turn =  changeTurn();
+               count++;
                 audioTurn.play();
                 checkWin();
-
+                if(gameover){
+                    win(turn)
+                }
+                turn =  changeTurn();
                 if(!gameover){
                     document.getElementsByClassName("info")[0].innerText = "Turn for " + turn;
                 }
-                
+               
             };
+            // console.log(count)
+            if(count===9){
+                draw()
+
+            }
 
         })
+       
     })
-
-
-
-
-    
-
     reset.addEventListener('click' , ()=>{
         let boxtexts  = document.querySelectorAll('.box-text');
         Array.from(boxtexts).forEach(element=>{
@@ -73,4 +78,22 @@ let boxes = document.getElementsByClassName("box");
         gameover = false;
         document.getElementsByClassName("info")[0].innerText = "Turn for " + turn;
         document.querySelector(".img-box").getElementsByTagName("img")[0].style.width = "0px"
+       
     })
+
+    function draw(){
+        alert("match draw")
+        window.location.href="index.html"
+    }
+
+
+    
+
+function win(t){
+    alert(`${t} won`)
+    window.location.href="index.html"
+
+}
+
+
+    

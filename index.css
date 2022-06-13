@@ -54,7 +54,7 @@ nav{
 .img-box img{ 
     /* border: 1px solid red; */
     width: 0px;
-    transition: width 1s ease-in-out;
+    transition: width 5s ease-in-out;
 }
 
 .br-0{
@@ -73,7 +73,7 @@ nav{
     border-bottom: 0;
 }
 
-#reset{
+.btn{
     margin-left: 20px;
     padding: 10px 30px;
     background-color: #FAD4D4;
