@@ -93,7 +93,7 @@ let boxes = document.getElementsByClassName("box");
     
 
 function win(t){
-    alert(`${t} won`)
+    alert(`${t} won the match`)
     window.location.href="four.html"
 
 }
